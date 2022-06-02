@@ -1,18 +1,460 @@
 <html>
+  <head>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fluig.purinutre.com/style-guide/css/fluig-style-guide.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://fluig.purinutre.com/portal/resources/js/jquery/jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fluig.purinutre.com/portal/resources/js/jquery/jquery-ui.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fluig.purinutre.com/portal/resources/js/mustache/mustache-min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://fluig.purinutre.com/style-guide/js/fluig-style-guide.min.js"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-	<link type="text/css" rel="stylesheet"
-		href="https://fluig.purinutre.com/style-guide/css/fluig-style-guide.min.css" />
-	<script type="text/javascript" src="https://fluig.purinutre.com/portal/resources/js/jquery/jquery.js"></script>
-	<script type="text/javascript"
-		src="https://fluig.purinutre.com/portal/resources/js/jquery/jquery-ui.min.js"></script>
-	<script type="text/javascript"
-		src="https://fluig.purinutre.com/portal/resources/js/mustache/mustache-min.js"></script>
-	<script type="text/javascript" src="https://fluig.purinutre.com/style-guide/js/fluig-style-guide.min.js"
-		charset="utf-8"></script>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <body>
+    <div class="fluig-style-guide">
+      <form name="form" role="form">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a
+                tabindex="-1"
+                class="collapse-icon up"
+                data-toggle="collapse"
+                href="#solicitanteCollapse"
+              >
+                <i class="flaticon flaticon-person icon-sm"></i>
+                <strong>Solicitantte</strong>
+              </a>
+            </h4>
+          </div>
+          <div
+            id="solicitanteCollapse"
+            class="panel-body panel-collapse collapse in"
+          >
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="nome_solicitante">Nome Solicitante</label>
+                <input
+                  type="text"
+                  id="nome_solicitante"
+                  name="nome_solicitante"
+                  placeholder="Nome Solicitante"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="nome_fornecedor">Nome Fornecedor</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nome Fornecedor"
+                  name="nome_fornecedor"
+                  id="nome_fornecedor"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-3">
+                <label for="cnjp_fornecedor">CNPJ do fornecedor</label>
+                <input
+                  type="text"
+                  placeholder="CNPJ do fornecedor"
+                  name="cnpj_fornecedor"
+                  class="form-control"
+                  id="cnpj_fornecedor"
+                />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="contato_fornecedor">Contato do fornecedor</label>
+                <input
+                  type="text"
+                  placeholder="Contato do fornecedor"
+                  id="contato_fornecedor"
+                  name="contato_fornecedor"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="loja_destino">Loja destino</label>
+                <input
+                  type="text"
+                  placeholder="loja destino"
+                  id="loja_destino"
+                  name="loja_destino"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form group col-md-6">
+                <label for="produto_servico">Produto/Serviço</label>
+                <input
+                  type="text"
+                  mask="000.000.000-00"
+                  id="produto_servico"
+                  name="produto_servico"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="service_value">Valor do Serviço</label>
+                <input
+                  value="0.00"
+                  type="number"
+                  id="service_value"
+                  name="service_value"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-2">
+                <label for="data_pagamento">Data de Pagamento</label>
+                <input
+                  type="text"
+                  id="data_pagamento"
+                  name="data_pagamento"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label>Tipo do Orçamento</label>
+                <div class="flex gap-3">
+                  <input
+                    type="radio"
+                    name="tipo_orcamento"
+                    id="com_sinal"
+                    class="rinput"
+                    value="com_sinal"
+                  />
+                  <label for="com_sinal" class="rlabel">
+                    <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                    <span>Com Sinal</span>
+                  </label>
+                  <input
+                    type="radio"
+                    name="tipo_orcamento"
+                    id="sem_sinal"
+                    class="rinput"
+                    value="sem_sinal"
+                  />
+                  <label for="sem_sinal" class="rlabel">
+                    <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+                    <span>Sem Sinal</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <label for="obs">Observação</label>
+            <span class="required text-danger"><strong>*</strong></span>
+            <div class="row">
+              <div class="form-group col-md-5">
+                <textarea
+                  name="obs_solicitante"
+                  id="obs_solicitante"
+                  class="col-md-12"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a
+                tabindex="-1"
+                class="collapse-icon up"
+                data-toggle="collapse"
+                href="#bancariosCollapse"
+              >
+                <i class="flaticon flaticon-account-balance icon-sm"></i>
+                <strong>Dados Bancários de Beneficiário</strong>
+              </a>
+            </h4>
+          </div>
+          <div
+            id="bancariosCollapse"
+            class="panel-body panel-collapse collapse in"
+          >
+            <div class="row">
+              <div class="form-group col-md-3">
+                <label for="nome">Nome Completo</label>
+                <input
+                  name="nome"
+                  type="text"
+                  id="nome"
+                  placeholder="Nome Completo"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-3">
+                <label for="tipoconta">Tipo de conta</label>
+                <select name="tipoconta" id="tipoconta" class="form-control">
+                  <option value="Conta Corrente">Conta Corrente</option>
+                  <option value="Conta Poupança">Conta Poupança</option>
+                  <option value="Depósito Via Purinutre">
+                    Depósito Via Purinutre
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-2">
+                <label for="numero_banco">Cod. Banco</label>
+                <input
+                  name="numero_banco"
+                  mask="000"
+                  type="text"
+                  id="numero_banco"
+                  placeholder="Banco"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-2">
+                <label for="nome_banco">Nome do Banco</label>
+                <input
+                  name="nome_banco"
+                  type="text"
+                  id="nome_banco"
+                  placeholder="Banco"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-2">
+                <label for="agencia">Agência</label>
+                <input
+                  name="agencia"
+                  maxlength="5"
+                  type="text"
+                  id="agencia"
+                  placeholder="Agência"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group col-md-2">
+                <label for="conta">Conta</label>
+                <input
+                  name="conta"
+                  type="text"
+                  id="conta"
+                  placeholder="Conta"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-2">
+                <label for="tipopix">Tipo Pix</label>
+                <select name="tipopix" id="tipopix" class="form-control">
+                  <option value="CPF">CPF</option>
+                  <option value="CNPJ">CNPJ</option>
+                  <option value="CELULAR">CELULAR</option>
+                  <option value="EMAIL">EMAIL</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="chavepix">Chave Pix</label>
+                <input
+                  name="chavepix"
+                  type="text"
+                  id="chavepix"
+                  placeholder="Chave Pix"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <label for="obs">Observação</label>
+            <span class="required text-danger"><strong>*</strong></span>
+            <div class="row">
+              <div class="form-group col-md-5">
+                <textarea name="obs" id="obs" class="col-md-12"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary" id="aprovador">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a
+                tabindex="-1"
+                class="collapse-icon up"
+                data-toggle="collapse"
+                href="#diretoriaCollapse"
+              >
+                <i class="flaticon flaticon-person icon-sm"></i>
+                <strong>Diretoria</strong>
+              </a>
+            </h4>
+          </div>
+          <div
+            id="diretoriaCollapse"
+            class="panel-body panel-collapse collapse in"
+          >
+            <div class="row">
+              <div class="form-group col-md-3">
+                <label>Aprovar?</label>
+                <div class="flex">
+                  <input
+                    type="radio"
+                    name="aprovar"
+                    id="sim"
+                    class="rinput"
+                    value="sim"
+                  />
+                  <label for="sim" class="rlabel">
+                    <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                    <span>Sim</span>
+                  </label>
+                  <input
+                    type="radio"
+                    name="aprovar"
+                    id="nao"
+                    class="rinput"
+                    value="nao"
+                  />
+                  <label for="nao" class="rlabel">
+                    <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+                    <span>Não</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <label for="obs">Observação</label>
+            <span class="required text-danger"><strong>*</strong></span>
+            <div class="row">
+              <div class="form-group col-md-5">
+                <textarea
+                  name="obs_aprovador"
+                  id="obs_aprovador"
+                  class="col-md-12"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary" id="contasapagar">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a
+                tabindex="-1"
+                class="collapse-icon up"
+                data-toggle="collapse"
+                href="#contasaPagarCollapse"
+              >
+                <i class="flaticon flaticon-form-list icon-sm"></i>
+                <strong>Contas a Pagar</strong>
+              </a>
+            </h4>
+          </div>
+          <div
+            id="contasaPagarCollapse"
+            class="panel-body panel-collapse collapse in"
+          >
+            <div class="row" id="field_agendamento">
+              <div class="form-group col-md-4">
+                <label for="agendamento">Data Agendamento</label>
+                <input type="text" name="agendamento" id="agendamento" />
+              </div>
+            </div>
+            <label for="detalhes_agendamento">Detalhes do Agendamento</label>
+            <span class="required text-danger"><strong>*</strong></span>
+            <div class="row">
+              <div class="form-group col-md-5">
+                <textarea
+                  name="detalhes_agendamento"
+                  id="detalhes_agendamento"
+                  class="col-md-12"
+                ></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-3">
+                <label>Os dados bancários estão corretos?</label>
+                <div class="flex">
+                  <input
+                    type="radio"
+                    name="dadoscorretos"
+                    id="dadoscorretos_sim"
+                    class="rinput"
+                    value="sim"
+                  />
+                  <label for="dadoscorretos_sim" class="rlabel">
+                    <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                    <span>Sim</span>
+                  </label>
+                  <input
+                    type="radio"
+                    name="dadoscorretos"
+                    id="dadoscorretos_nao"
+                    class="rinput"
+                    value="nao"
+                  />
+                  <label for="dadoscorretos_nao" class="rlabel">
+                    <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+                    <span>Não</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-primary" id="diretoria">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a
+                tabindex="-1"
+                class="collapse-icon up"
+                data-toggle="collapse"
+                href="#diretoriaCollapse"
+              >
+                <i class="flaticon flaticon-monetization-on icon-sm"></i>
+                <strong>Diretoria Financeira</strong>
+              </a>
+            </h4>
+          </div>
+          <div
+            id="diretoriaCollapse"
+            class="panel-body panel-collapse collapse in"
+          >
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label for="pagamento">Data Pagamento</label>
+                <input type="text" name="pagamento" id="pagamento" />
+              </div>
+            </div>
+            <label for="detalhes_pagamento">Detalhes do Pagamento</label>
+            <span class="required text-danger"><strong>*</strong></span>
+            <div class="row">
+              <div class="form-group col-md-5">
+                <textarea
+                  name="detalhes_pagamento"
+                  id="detalhes_pagamento"
+                  class="col-md-12"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 
+<<<<<<< HEAD
 <body>
 	<div class="fluig-style-guide">
 		<form name="form" role="form">
@@ -276,13 +718,13 @@
 		</form>
 	</div>
 </body>
+=======
+  <script>
+    var dataPagamento = FLUIGC.calendar('#data_pagamento')
+>>>>>>> 77e77266c9939e88490d66013a4e60fd6f53ef29
 
-<script>
-	var dataPagamento = FLUIGC.calendar('#data_pagamento');
-
-	$("#service_value").blur(function () {
-		$('#service_value').val(parseFloat($('#service_value').val()).toFixed(2))
-	})
-</script>
-
+    $('#service_value').blur(function () {
+      $('#service_value').val(parseFloat($('#service_value').val()).toFixed(2))
+    })
+  </script>
 </html>
