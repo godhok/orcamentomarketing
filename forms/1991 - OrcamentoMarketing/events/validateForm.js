@@ -1,26 +1,26 @@
 function validateForm(form) {
-    var activity = getValue('WKNumState');
+    var activity = parseInt(getValue("WKNumState"));
 
     var msg = "";
 
     var solicitanteFields = ['nome_solicitante', 'nome_fornecedor', 'cnpj_fornecedor', 'contato_fornecedor', 'loja_destino', 'produto_servico', 'service_value', 'data_pagamento_fornecedor', 'tipo_orcamento', 'obs_solicitante']
-    var diretoriaFields = ['aprovar', 'obs_aprovador']
+    var aprovadorFields = ['aprovar', 'obs_aprovador']
     var contasaPagarFields = ['data_agendamento', 'detalhes_agendamento', 'dadoscorretos']
     var diretoriaFields = ['data_pagamento', 'detalhes_pagamento']
 
 
+
+    for (i in solicitanteFields) {
+        if (form.getValue(solicitanteFields[i]) == "") {
+            msg += 'O Campo ' + solicitanteFields[i] + ' não foi preenchido' + "<br>";
+        }
+    }
+
     switch (activity) {
-        case 0:
-            for (i in solicitanteFields) {
-                if (form.getValue(solicitanteFields[i]) == "") {
-                    msg += 'O Campo ' + solicitanteFields[i] + ' não foi preenchido' + "<br>";
-                }
-            }
-            break;
         case 11:
-            for (i in diretoriaFields) {
-                if (form.getValue(diretoriaFields[i]) == "") {
-                    msg += 'O Campo ' + diretoriaFields[i] + ' não foi preenchido' + "<br>";
+            for (i in aprovadorFields) {
+                if (form.getValue(aprovadorFields[i]) == "") {
+                    msg += 'O Campo ' + aprovadorFields[i] + ' não foi preenchido' + "<br>";
                 }
             }
             break;
