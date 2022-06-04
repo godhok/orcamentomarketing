@@ -3,7 +3,7 @@ function validateForm(form) {
 
     var msg = "";
 
-    var solicitanteFields = ['nome_solicitante', 'nome_fornecedor', 'cnpj_fornecedor', 'contato_fornecedor', 'loja_destino', 'produto_servico', 'service_value', 'data_pagamento_fornecedor', 'tipo_orcamento', 'obs_solicitante']
+    var solicitanteFields = ['nome_solicitante', 'nome_fornecedor', 'cnpj_fornecedor', 'contato_fornecedor', 'loja_destino', 'produto_servico', 'service_value', 'data_pagamento_fornecedor', 'tipo_orcamento', 'obs_solicitante', 'obs']
     var aprovadorFields = ['aprovar', 'obs_aprovador']
     var contasaPagarFields = ['data_agendamento', 'detalhes_agendamento', 'dadoscorretos']
     var diretoriaFields = ['data_pagamento', 'detalhes_pagamento']
