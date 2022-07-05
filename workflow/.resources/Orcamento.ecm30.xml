@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Orcamento</processId>
-      <version>3</version>
+      <version>20</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>1991</formId>
@@ -589,7 +589,7 @@
         <companyId>1</companyId>
         <processId>Orcamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>3</version>
+        <version>20</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -601,7 +601,7 @@
         <companyId>1</companyId>
         <processId>Orcamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>3</version>
+        <version>20</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -613,7 +613,7 @@
         <companyId>1</companyId>
         <processId>Orcamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>3</version>
+        <version>20</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -625,7 +625,7 @@
         <companyId>1</companyId>
         <processId>Orcamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>3</version>
+        <version>20</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -637,24 +637,24 @@
         <companyId>1</companyId>
         <processId>Orcamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>3</version>
+        <version>20</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
-      <condition>false</condition>
+      <condition>hAPI.getCardValue(&quot;tipo_orcamento&quot;) == &quot;com_sinal&quot; &amp;&amp; hAPI.getCardValue(&quot;remover_sinal&quot;) != &quot;sim&quot;</condition>
       <destinationSequenceId>27</destinationSequenceId>
-      <conditionType>1</conditionType>
+      <conditionType>0</conditionType>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>3</version>
+        <version>20</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
-      <condition>false</condition>
+      <condition>hAPI.getCardValue(&quot;tipo_orcamento&quot;) == &quot;sem_sinal&quot; || hAPI.getCardValue(&quot;remover_sinal&quot;) == &quot;sim&quot;</condition>
       <destinationSequenceId>32</destinationSequenceId>
-      <conditionType>1</conditionType>
+      <conditionType>0</conditionType>
     </ConditionProcessState>
   </list>
   <list>
@@ -1013,7 +1013,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>12</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1024,7 +1024,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>22</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1035,7 +1035,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>23</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1046,7 +1046,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>24</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1057,7 +1057,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>24</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1068,7 +1068,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1079,7 +1079,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>31</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1090,7 +1090,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>31</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1101,7 +1101,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Orcamento</processId>
-        <version>3</version>
+        <version>20</version>
         <linkSequence>33</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1115,7 +1115,19 @@
   <list/>
   <list/>
   <list/>
-  <list/>
+  <list>
+    <ProcessAttachmentRules>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>Orcamento</processId>
+      <processVersion>20</processVersion>
+      <stateSequence>29</stateSequence>
+      <operator>3</operator>
+      <amount>1</amount>
+      <name>*.*</name>
+      <message>É Obrigatório anexar o comprovante de pagamento</message>
+    </ProcessAttachmentRules>
+  </list>
   <list>
     <ConditionProcessAutomaticRules>
       <sequence>13</sequence>
@@ -1150,24 +1162,6 @@
       <ruleOrder>1</ruleOrder>
       <field>dadoscorretos</field>
       <value>nao</value>
-      <operator>1</operator>
-      <valueType>1</valueType>
-    </ConditionProcessAutomaticRules>
-    <ConditionProcessAutomaticRules>
-      <sequence>25</sequence>
-      <expressionOrder>1</expressionOrder>
-      <ruleOrder>1</ruleOrder>
-      <field>tipo_orcamento</field>
-      <value>com_sinal</value>
-      <operator>1</operator>
-      <valueType>1</valueType>
-    </ConditionProcessAutomaticRules>
-    <ConditionProcessAutomaticRules>
-      <sequence>25</sequence>
-      <expressionOrder>2</expressionOrder>
-      <ruleOrder>1</ruleOrder>
-      <field>tipo_orcamento</field>
-      <value>sem_sinal</value>
       <operator>1</operator>
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
