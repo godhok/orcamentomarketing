@@ -38,12 +38,6 @@ function validateForm(form) {
                 }
             }
             break;
-        case 29:
-            var attachments = hAPI.listAttachments();
-            if (!attachments.size() > 0) {
-                msg += "É preciso anexar o comprovante de pagamento para continuar o processo!";
-            }
-            break;
     }
 
     if (msg !== "") {

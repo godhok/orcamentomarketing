@@ -58,8 +58,7 @@
 					<div class="row">
 						<div class="form group col-md-6">
 							<label for="produto_servico">Produto/Serviço</label>
-							<input type="text" id="produto_servico" name="produto_servico"
-								class="form-control" />
+							<input type="text" id="produto_servico" name="produto_servico" class="form-control" />
 						</div>
 						<div class="form-group col-md-3">
 							<label for="service_value">Valor do Serviço</label>
@@ -70,7 +69,8 @@
 					<div class="row">
 						<div class="form-group col-md-2">
 							<label for="data_pagamento_fornecedor">Data de Pagamento para Fornecedor</label>
-							<input type="text" id="data_pagamento_fornecedor" name="data_pagamento_fornecedor" class="form-control" />
+							<input type="text" id="data_pagamento_fornecedor" name="data_pagamento_fornecedor"
+								class="form-control" />
 						</div>
 						<div class="form-group col-md-6">
 							<label>Tipo do Orçamento</label>
@@ -145,7 +145,7 @@
 							<label for="conta">Conta</label>
 							<input name="conta" type="text" id="conta" placeholder="Conta" class="form-control" />
 						</div>
-            <div class="form-group col-md-2">
+						<div class="form-group col-md-2">
 							<label for="operacao">Operação</label>
 							<input name="operacao" type="text" id="conta" placeholder="Operação" class="form-control" />
 						</div>
@@ -281,6 +281,29 @@
 					</div>
 				</div>
 			</div>
+			<div class="panel panel-primary" id="alerta">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a tabindex="-1" class="collapse-icon up" data-toggle="collapse" href="#alertaCollapse">
+							<i class="flaticon flaticon-monetization-on icon-sm"></i>
+							<strong>Alerta de 2ª Etapa</strong>
+						</a>
+					</h4>
+				</div>
+				<div id="alertaCollapse" class="panel-body panel-collapse collapse in">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="alert alert-warning" role="alert">
+								Este processo está na 2ª etapa de solicitação.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="remover_sinal" style="opacity: 0; cursor: default;">
+				<input type="radio" name="remover_sinal" id="remover_sinal_sim" value="sim">
+				<input type="radio" name="remover_sinal" id="remover_sinal_nao" value="nao">
+			</div>
 		</form>
 	</div>
 </body>
@@ -293,6 +316,20 @@
 	$('#service_value').blur(function () {
 		$('#service_value').val(parseFloat($('#service_value').val()).toFixed(2))
 	})
+
+	var remover_sinal = $("#remover_sinal")
+
+	function selectRadio() {
+		let radioOption = jQuery("#remover_sinal input:radio[value=sim]");
+
+		// This will select the radio button
+		radioOption.prop("checked", true);
+	}
+
+	if (remover_sinal[0].style.display == 'block') {
+		selectRadio()
+	}
+
 </script>
 
 </html>
